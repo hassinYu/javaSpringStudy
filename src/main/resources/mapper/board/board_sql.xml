@@ -8,6 +8,9 @@
 			  FROM board
 	    ]]>
 	</select>
+	<select id="selectList" resultType="java.util.Map">
+	           SELECT * FROM board
+	</select>
     <!-- <select id="selectUserId" parameterType="hashmap" resultType="Integer">
         <![CDATA[
             SELECT count(user_id) checkResult 

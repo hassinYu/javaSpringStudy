@@ -2,7 +2,10 @@ package com.myboardtest.myboard;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +48,14 @@ public class HomeController {
         // System.out.println(sqlSession.selectOne("SELECT * FROM BOARD"));
         /*
          * boardDAO dao = new boardDAO();
-         */ System.out.println(dao.selectCount());
+         */
+        System.out.println(dao.selectCount());
+        System.out.println(dao.selectList());
+
+        Map<String, Object> test = new HashMap<String, Object>();
+        List<Map<String, Object>> list = dao.selectList();
+        model.addAttribute("result", list);
+
         return "home";
     }
 
